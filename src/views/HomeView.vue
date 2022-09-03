@@ -15,6 +15,7 @@
           :addToShoppingCart="addToShoppingCart"
           :name="menuItem.name"
           :image="menuItem.image"
+          :price="menuItem.price"
           :quantity="menuItem.quantity"
           :inStock="menuItem.inStock"
           :key="menuItem.name"
@@ -40,7 +41,7 @@ export default {
   components: {MenuItem},
   data() {
     return {
-      address: '18 avenue du Beurre, Paris, France',
+      address: '18 avenuequantity du Beurre, Paris, France',
       email: 'hello@cafewithavue.bakery',
       phone: '01 88 88 88 88',
       restaurantName: 'La belle vue',
@@ -53,7 +54,8 @@ export default {
             alt: "Un croissant"
           },
           inStock: true,
-          quantity: 1
+          quantity: 1,
+          price: 2.99
         },
         {
           name: "Baguette de pain",
@@ -62,7 +64,8 @@ export default {
             alt: "Quatre baguettes de pain"
           },
           inStock: true,
-          quantity: 1
+          quantity: 1,
+          price: 3.99
         },
         {
           name: "Éclair",
@@ -71,7 +74,8 @@ export default {
             alt: "Éclair au chocolat"
           },
           inStock: false,
-          quantity: 1
+          quantity: 1,
+          price: 4.99
         }
       ]
     }
