@@ -32,7 +32,7 @@
                 <p v-else>En rupture de stock</p>
                 <div>
                     <label for="add-item-quantity">Quantité : {{menuItem.quantity}}</label>
-                    <input id="add-item-quantity" type="number" />
+                    <input v-model.number="menuItem.quantity" id="add-item-quantity" type="number" />
                     <button @click="addToShoppingCart(menuItem.quantity)">Ajouter au panier d'achat</button>
                 </div>
             </div>
@@ -40,7 +40,7 @@
     </section>
 
     <aside class="shopping-cart">
-        <h2>Panier d'achat: 0 articles</h2>
+        <h2>Panier d'achat: {{ shoppingCart }} articles</h2>
     </aside>
 
     <h2>Contactez nous</h2>
@@ -64,7 +64,7 @@
     const app = new Vue({
         el:'#app',
         data: {
-            Address:'18 avenue du Beurre, Paris, France',
+            address:'18 avenue du Beurre, Paris, France',
             email: 'hello@cafewithavue.bakery',
             phone:'01 88 88 88 88',
             restaurantName:'La belle vue',
@@ -108,7 +108,7 @@
         },
         methods: {
             addToShoppingCart(amount) {
-                this.shoppinCart += amount
+                this.shoppingCart += amount
             }
         }
     })
