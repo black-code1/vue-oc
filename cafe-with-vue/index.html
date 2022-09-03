@@ -33,7 +33,7 @@
                 <div>
                     <label for="add-item-quantity">Quantité : {{menuItem.quantity}}</label>
                     <input id="add-item-quantity" type="number" />
-                    <button>Ajouter au panier d'achat</button>
+                    <button @click="addToShoppingCart(menuItem.quantity)">Ajouter au panier d'achat</button>
                 </div>
             </div>
         </div>
@@ -68,6 +68,7 @@
             email: 'hello@cafewithavue.bakery',
             phone:'01 88 88 88 88',
             restaurantName:'La belle vue',
+            shoppingCart: 0,
             simpleMenu: [
                 {
                     name: "Croissant",
@@ -103,6 +104,11 @@
                 const currentYear = new Date().getFullYear()
 
                 return `Copyright ${this.restaurantName} ${currentYear}`
+            }
+        },
+        methods: {
+            addToShoppingCart(amount) {
+                this.shoppinCart += amount
             }
         }
     })
