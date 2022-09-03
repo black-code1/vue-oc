@@ -9,10 +9,10 @@
     <title>Cafe with a Vue</title>
 </head>
 <body>
-<div class="app">
-    <h1>La belle vue</h1>
+<div id="app">
+    <h1>{{ restaurantName }}</h1>
     <p class="description">
-        Bienvenue dans notre café la belle vue ! Nous sommes réputés pour notre
+        Bienvenue dans notre café {{ restaurantName }} ! Nous sommes réputés pour notre
         pain et nos merveilleuses pâtisseries. Faites vous plaisir dès le matin
         ou avec un goûter réconfortant. Mais attention, vous verrez qu'il est
         difficile de s'arrêter.
@@ -27,7 +27,7 @@
     const app = new Vue({
         el:'#app',
         data: {
-            restaurantName:''
+            restaurantName:'La belle vue'
         }
     })
 </script>
