@@ -20,18 +20,18 @@
 
     <section class="menu">
         <h2>Menu</h2>
-        <div class="menu-item">
+        <div v-for="menuItem in simpleMenu" class="menu-item">
             <img
                     class="menu-item__image"
-                    src="https://via.placeholder.com/300x150"
-                    alt=""
+                    :src="menuItem.image.source"
+                    :alt="menuItem.image.alt"
             />
             <div>
-                <h3>Nom de l'article</h3>
-                <p>En stock</p>
-                <p>En rupture de stock</p>
+                <h3>{{menuItem.name}}</h3>
+                <p v-if="menuItem.inStock">En stock</p>
+                <p v-else>En rupture de stock</p>
                 <div>
-                    <label for="add-item-quantity">Quantité :</label>
+                    <label for="add-item-quantity">Quantité : {{menuItem.quantity}}</label>
                     <input id="add-item-quantity" type="number" />
                     <button>Ajouter au panier d'achat</button>
                 </div>
