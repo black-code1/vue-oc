@@ -1,5 +1,6 @@
 <script>
 import BaseButton from "@/components/BaseButton.vue";
+import {mapActions} from "vuex";
 export default {
   name: "MenuItem",
   components: {BaseButton},
@@ -31,11 +32,6 @@ export default {
       qty: this.quantity
     }
   },
-  methods: {
-    updateShoppingCart(quantity) {
-      this.$emit('add-items-to-cart', quantity)
-    }
-  },
   computed: {
     generatedPrice() {
       if (this.onSale) {
@@ -45,6 +41,10 @@ export default {
       }
     }
   },
+  methods: {
+    ...mapActions(["updateShoppingCart"])
+  },
+
   beforeMount() {
     const today = new Date().getDate()
     if (today % 2 === 0) {
