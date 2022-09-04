@@ -95,13 +95,26 @@ export default {
 }
 </script>
 
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.description {
+  max-width: 960px;
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+.footer {
+  font-style: italic;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.shopping-cart {
+  position: absolute;
+  right: 30px;
+  top: 0;
 }
 </style>
